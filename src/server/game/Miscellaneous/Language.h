@@ -215,7 +215,8 @@ enum TrinityStrings
     LANG_GRID_POSITION                  = 178,
     // 179-185 used in 6.x branch
     LANG_TRANSPORT_POSITION             = 186,
-    // Room for more level 1              187-199 not used
+    LANG_PARTIAL_GROUP_SUMMON           = 187,
+    // Room for more level 1              188-199 not used
 
     // level 2 chat
     LANG_NO_SELECTION                   = 200,
@@ -987,7 +988,10 @@ enum TrinityStrings
     LANG_GUILD_INFO_MOTD                = 1182,
     LANG_GUILD_INFO_EXTRA_INFO          = 1183,
     LANG_CHANGEACCOUNT_SUCCESS          = 1184,             // log
-    // Room for more level 3              1185-1198 not used
+    LANG_GROUP_NOT_IN_RAID_GROUP        = 1185,
+    LANG_GROUP_ROLE_CHANGED             = 1186,
+    LANG_LEADER_CANNOT_BE_ASSISTANT     = 1187,
+    // Room for more level 3              1188-1198 not used
 
     // Debug commands
     LANG_DO_NOT_USE_6X_DEBUG_AREATRIGGER_LEFT = 1999,
