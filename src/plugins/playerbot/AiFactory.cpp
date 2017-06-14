@@ -98,24 +98,27 @@ void AiFactory::AddDefaultCombatStrategies(Player* player, PlayerbotAI* const fa
 		engine->addStrategies("racials", "chat", "default", "aoe", "potions", "conserve mana", "duel", "pvp", NULL);
 	}
 
-    switch (player->getClass())
-    {
-        case CLASS_PRIEST:
-			if ((tab == 0) && (player->getLevel() > 9)) {
-				engine->addStrategies("heal", "conserve mana", NULL);
+	switch (player->getClass())
+	{
+	case CLASS_PRIEST:
+		if ((tab == 0) && (player->getLevel() > 9)) {
+			engine->addStrategies("heal", "conserve mana", NULL);
+		}
+		else if ((tab == 1) && (player->getLevel() > 9)) {
+			engine->addStrategies("heal", "holy", "conserve mana", NULL);
+		}
+		else if (tab == 2) {
+			engine->addStrategies("dps", "threat", NULL);
+			if (player->getLevel() > 19) {
+				engine->addStrategy("dps debuff");
 			}
-			else if ((tab == 1) && (player->getLevel() > 9)) {
-				engine->addStrategies("heal", "holy", "conserve mana", NULL);
+		}
+		else {
+			engine->addStrategies("heal", "holy", "conserve mana", NULL);
+			if (!player->GetGroup()) {
+				engine->addStrategies("dps", "dps debuff", NULL);
 			}
-			else if (tab == 2) {
-				engine->addStrategies("dps", "threat", NULL);
-				if (player->getLevel() > 19) {
-					engine->addStrategy("dps debuff");
-				}
-			}
-			else {
-				engine->addStrategies("heal", "holy", "conserve mana", NULL);
-			}
+		}
 
             engine->addStrategies("dps assist", "flee", NULL);
             break;

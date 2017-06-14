@@ -769,6 +769,7 @@ enum RBACPermissions
     RBAC_PERM_COMMAND_GROUP_ASSISTANT                        = 862,
     RBAC_PERM_COMMAND_GROUP_MAINTANK                         = 863,
     RBAC_PERM_COMMAND_GROUP_MAINASSIST                       = 864,
+    RBAC_PERM_COMMAND_NPC_SHOWLOOT                           = 865,
 
 	// custom World Chat
 	RBAC_PERM_COMMAND_WORLD_CHAT                             = 1015,

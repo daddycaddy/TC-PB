@@ -3,6 +3,7 @@
 #include "DruidMultipliers.h"
 #include "CasterDruidStrategy.h"
 #include "FeralDruidStrategy.h"
+#include "RandomPlayerbotMgr.h"
 
 using namespace ai;
 
@@ -131,6 +132,13 @@ void CasterDruidStrategy::InitTriggers(std::list<TriggerNode*> &triggers)
         NextAction::array(0, new NextAction("moonfire", ACTION_NORMAL + 4), NULL)));
 
 
+	triggers.push_back(new TriggerNode(
+		"low health",
+		NextAction::array(0, new NextAction("regrowth", ACTION_MEDIUM_HEAL + 2), NULL)));
+	
+	triggers.push_back(new TriggerNode(
+		"critical health",
+		NextAction::array(0, new NextAction("regrowth", ACTION_CRITICAL_HEAL + 2), new NextAction("healing touch", ACTION_CRITICAL_HEAL + 2), NULL)));
 
 	triggers.push_back(new TriggerNode(
 		"nature's grasp",

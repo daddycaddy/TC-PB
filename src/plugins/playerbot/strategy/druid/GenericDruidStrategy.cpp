@@ -97,17 +97,8 @@ void GenericDruidStrategy::InitTriggers(std::list<TriggerNode*> &triggers)
     CombatStrategy::InitTriggers(triggers);
 
     triggers.push_back(new TriggerNode(
-        "low health",
-        NextAction::array(0, new NextAction("regrowth", ACTION_MEDIUM_HEAL + 2), NULL)));
-
-    triggers.push_back(new TriggerNode(
         "party member low health",
         NextAction::array(0, new NextAction("regrowth on party", ACTION_MEDIUM_HEAL + 1), NULL)));
-
-
-    triggers.push_back(new TriggerNode(
-        "critical health",
-        NextAction::array(0, new NextAction("regrowth", ACTION_CRITICAL_HEAL + 2), new NextAction("healing touch", ACTION_CRITICAL_HEAL + 2), NULL)));
 
     triggers.push_back(new TriggerNode(
         "party member critical health",

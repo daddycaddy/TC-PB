@@ -47,6 +47,14 @@ void HealDruidStrategy::InitTriggers(std::list<TriggerNode*> &triggers)
         "party member almost full health",
         NextAction::array(0, new NextAction("rejuvenation on party", ACTION_LIGHT_HEAL + 1), NULL)));
 
+	triggers.push_back(new TriggerNode(
+		"low health",
+		NextAction::array(0, new NextAction("regrowth", ACTION_MEDIUM_HEAL + 2), NULL)));
+	
+	triggers.push_back(new TriggerNode(
+		"critical health",
+		NextAction::array(0, new NextAction("regrowth", ACTION_CRITICAL_HEAL + 2), new NextAction("healing touch", ACTION_CRITICAL_HEAL + 2), NULL)));
+	
     triggers.push_back(new TriggerNode(
         "medium aoe heal",
         NextAction::array(0, new NextAction("tranquility", ACTION_MEDIUM_HEAL + 3), NULL)));

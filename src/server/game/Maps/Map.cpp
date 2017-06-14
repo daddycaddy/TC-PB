@@ -459,7 +459,7 @@ void Map::EnsureGridCreated(const GridCoord &p)
 //But object data is not loaded here
 void Map::EnsureGridCreated_i(const GridCoord &p)
 {
-    if (!getNGrid(p.x_coord, p.y_coord))
+	if (p.x_coord<MAX_NUMBER_OF_GRIDS && p.y_coord<MAX_NUMBER_OF_GRIDS && !getNGrid(p.x_coord, p.y_coord))
     {
         TC_LOG_DEBUG("maps", "Creating grid[%u, %u] for map %u instance %u", p.x_coord, p.y_coord, GetId(), i_InstanceId);
 

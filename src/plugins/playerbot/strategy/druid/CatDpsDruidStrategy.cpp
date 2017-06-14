@@ -132,7 +132,11 @@ void CatDpsDruidStrategy::InitTriggers(std::list<TriggerNode*> &triggers)
 	
 	triggers.push_back(new TriggerNode(
 		"low health",
-		NextAction::array(0, new NextAction("barkskin", ACTION_HIGH + 1), NULL)));
+		NextAction::array(0, new NextAction("barkskin", ACTION_HIGH + 1), new NextAction("regrowth", ACTION_MEDIUM_HEAL + 2), NULL)));
+	
+	triggers.push_back(new TriggerNode(
+		"critical health",
+		NextAction::array(0, new NextAction("regrowth", ACTION_CRITICAL_HEAL + 2), new NextAction("healing touch", ACTION_CRITICAL_HEAL + 2), NULL)));
 
 }
 
