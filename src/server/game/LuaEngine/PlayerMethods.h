@@ -3217,7 +3217,7 @@ namespace LuaPlayer
      */
     int AdvanceSkillsToMax(lua_State* /*L*/, Player* player)
     {
-        player->UpdateSkillsToMaxSkillsForLevel();
+        player->UpdateWeaponsSkillsToMaxSkillsForLevel();
         return 0;
     }
 
